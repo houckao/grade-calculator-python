@@ -15,7 +15,12 @@ def average(grades: List[float]) -> float:
     Returns:
         float: The average of the grades
     """
-    return 0
+
+    sum = 0
+    for x in grades:
+        sum = sum + x
+    average = sum/len(grades)
+    return round(average,2)
 
 def drop_lowest(grades: List[float]) -> List[float]:
     """Drops the lowest number and returns the pruned collection
@@ -26,7 +31,13 @@ def drop_lowest(grades: List[float]) -> List[float]:
     Returns:
         List[float]: The pruned list of grades
     """
-    return []
+
+    new_grades = grades.copy()
+    new_grades.remove(min(new_grades))
+
+    print(new_grades)
+
+    return new_grades
 
 def calculate_gpa(grades: List[str], weights: Dict[str, float]) -> float:
     """
@@ -42,4 +53,7 @@ def calculate_gpa(grades: List[str], weights: Dict[str, float]) -> float:
     Returns:
         float: The calculated GPA
     """
+
+
+
     return 0
