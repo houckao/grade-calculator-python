@@ -35,8 +35,6 @@ def drop_lowest(grades: List[float]) -> List[float]:
     new_grades = grades.copy()
     new_grades.remove(min(new_grades))
 
-    print(new_grades)
-
     return new_grades
 
 def calculate_gpa(grades: List[str], weights: Dict[str, float]) -> float:
@@ -54,6 +52,10 @@ def calculate_gpa(grades: List[str], weights: Dict[str, float]) -> float:
         float: The calculated GPA
     """
 
+    total = 0
+    for x in grades:
+        total += weights[x]
 
-
-    return 0
+    gpa = total/len(grades)
+    gpa = round(gpa, 2)
+    return gpa
